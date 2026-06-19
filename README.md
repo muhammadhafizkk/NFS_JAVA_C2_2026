@@ -1,1 +1,32 @@
 # NFS_JAVA_C2_2026
+
+Exercise 1
+
+a)
+i) What is the purpose of Course.java?
+It defines the Course class and its properties and methods.
+
+ii) What is the purpose of Instructor.java?
+It defines the Instructor class and its properties and methods.
+
+iii) What is the purpose of Student.java?
+It defines the Student class and its properties and methods.
+
+iv) What does the constructor do?
+A constructor initializes an object when it is created, assigning initial values to its fields.
+
+v) Why are the fields marked as private?
+To enforce encapsulation and prevent direct access to the object's data from outside the class.
+
+vi) What does course1.assignInstructor(instructor1); mean?
+It means to assign an Instructor object to a Course object
+
+vii) What does student1.printProfile(); do?
+It prints out the details of the Student object.
+
+b)
+i) One explanation from AI that helped you
+The AI explained that Java classes are similar to C++ classes. A class acts as a blueprint for creating objects, and constructors are automatically called when an object is created to initialize its data. The AI also explained that private fields support encapsulation by restricting direct access to an object's data.
+
+ii) One part you still needed the trainer or your own reading to understand.
+I needed more insight into best practices for maintaining loose coupling between classes when objects are passed and stored as fields, especially in larger systems where composition relationships can lead to unintended side effects if objects are modified externally.

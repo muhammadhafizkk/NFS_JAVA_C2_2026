@@ -1,0 +1,41 @@
+public class Instructor{
+    private String instructorId;
+    private String instructorName;
+    private String expertise;
+
+    public Instructor(String instructorId, String instructorName, String expertise) {
+        this.instructorId = instructorId;
+        this.instructorName = instructorName;
+        this.expertise = expertise;
+    }
+
+    public String getInstructorId() {
+        return instructorId;
+    }
+
+    public String getInstructorName() {
+        return instructorName;
+    }
+
+    public String getExpertise() {
+        return expertise;
+    }
+
+    public void setInstructorId(String instructorId) {
+        this.instructorId = instructorId;
+    }
+
+    public void setInstructorName(String instructorName) {
+        this.instructorName = instructorName;
+    }
+
+    public void setExpertise(String expertise) {
+        this.expertise = expertise;
+    }
+
+    public void printProfile() {
+        System.out.println("Instructor ID: " + instructorId);
+        System.out.println("Name: " + instructorName);
+        System.out.println("Expertise: " + expertise);
+    }
+}
