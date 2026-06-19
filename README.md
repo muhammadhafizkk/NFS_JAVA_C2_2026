@@ -30,3 +30,9 @@ The AI explained that Java classes are similar to C++ classes. A class acts as a
 
 ii) One part you still needed the trainer or your own reading to understand.
 I needed more insight into best practices for maintaining loose coupling between classes when objects are passed and stored as fields, especially in larger systems where composition relationships can lead to unintended side effects if objects are modified externally.
+
+Exercise 3
+
+CourseOffering is more useful than using only Course because a single course can be offered multiple times with different schedules, instructors, capacities, and delivery modes. For example, the course "Java Fundamentals" may have a June 2026 intake taught by one instructor and an August 2026 intake taught by another instructor.
+
+By separating Course and CourseOffering, the application follows a more realistic data model. The Course class stores general information about the course itself, while the CourseOffering class stores information specific to a particular intake or session. This approach reduces data duplication and makes it easier to manage enrollments, schedules, instructors, and course availability.
