@@ -9,6 +9,7 @@ import src.main.java.com.fullstack.demo.exception.InvalidCourseException;
 import src.main.java.com.fullstack.demo.exception.CourseNotFoundException;
 import src.main.java.com.fullstack.demo.exception.DuplicateCourseException;
 import src.main.java.com.fullstack.demo.model.Course;
+import src.main.java.com.fullstack.demo.model.Instructor;
 
 public class CourseService {
 
@@ -37,7 +38,6 @@ public class CourseService {
     }
 
     public List<Course> searchByTitle(String keyword) {
-        // Handle null keyword by defaulting to an empty string
         final String searchKeyword = (keyword == null) ? "" : keyword.toLowerCase().trim();
 
         return courseRepository.findAll().stream()
@@ -47,7 +47,6 @@ public class CourseService {
     }
 
     public List<Course> filterByLevel(String level) {
-        // Handle null level by defaulting to an empty string
         final String targetLevel = (level == null) ? "" : level.toLowerCase().trim();
 
         return courseRepository.findAll().stream()
@@ -72,6 +71,24 @@ public class CourseService {
         if (isBlank(course.getLevel())) {
             throw new InvalidCourseException("Course level is required.");
         }
+    }
+
+    public Course assignInstructor(String courseId, Instructor instructor) {
+        Course course = getCourseById(courseId);
+        
+        course.setInstructor(instructor);
+        
+        return courseRepository.save(course);
+    }
+
+    public List<Course> searchByInstructorName(String instructorName) {
+        final String searchName = (instructorName == null) ? "" : instructorName.toLowerCase().trim();
+
+        return courseRepository.findAll().stream()
+                .filter(course -> course.getInstructor() != null)
+                .filter(course -> course.getInstructor().getInstructorName() != null &&
+                                  course.getInstructor().getInstructorName().toLowerCase().contains(searchName))
+                .collect(Collectors.toList());
     }
 
     private boolean isBlank(String value) {
