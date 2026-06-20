@@ -1,14 +1,17 @@
-public class Instructor{
+package src.main.java.com.fullstack.demo.model;
+
+public class Instructor {
     private String instructorId;
     private String instructorName;
     private String expertise;
 
     public Instructor(String instructorId, String instructorName, String expertise) {
-        this.instructorId = instructorId;
-        this.instructorName = instructorName;
-        this.expertise = expertise;
+        setInstructorId(instructorId);
+        setInstructorName(instructorName);
+        setExpertise(expertise);
     }
 
+    // Getters
     public String getInstructorId() {
         return instructorId;
     }
@@ -21,21 +24,32 @@ public class Instructor{
         return expertise;
     }
 
+    // Setters with validation
     public void setInstructorId(String instructorId) {
-        this.instructorId = instructorId;
+        this.instructorId = requireText(instructorId, "Instructor ID");
     }
 
     public void setInstructorName(String instructorName) {
-        this.instructorName = instructorName;
+        this.instructorName = requireText(instructorName, "Instructor Name");
     }
 
     public void setExpertise(String expertise) {
-        this.expertise = expertise;
+        this.expertise = requireText(expertise, "Expertise");
     }
 
+    // Profile Output
     public void printProfile() {
         System.out.println("Instructor ID: " + instructorId);
         System.out.println("Name: " + instructorName);
         System.out.println("Expertise: " + expertise);
+        System.out.println("----------------------------");
+    }
+
+    // Helper Validation Method
+    private static String requireText(String value, String fieldName) {
+        if (value == null || value.isBlank()) {
+            throw new IllegalArgumentException(fieldName + " is required.");
+        }
+        return value.trim();
     }
 }
