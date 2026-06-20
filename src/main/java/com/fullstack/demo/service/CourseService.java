@@ -2,6 +2,7 @@ package src.main.java.com.fullstack.demo.service;
 
 import java.util.List;
 //import java.util.Optional;
+import java.util.stream.Collectors;
 
 import src.main.java.com.fullstack.demo.repository.CourseRepository;
 import src.main.java.com.fullstack.demo.exception.InvalidCourseException;
@@ -33,6 +34,26 @@ public class CourseService {
 
     public List<Course> getAllCourses() {
         return courseRepository.findAll();
+    }
+
+    public List<Course> searchByTitle(String keyword) {
+        // Handle null keyword by defaulting to an empty string
+        final String searchKeyword = (keyword == null) ? "" : keyword.toLowerCase().trim();
+
+        return courseRepository.findAll().stream()
+                .filter(course -> course.getTitle() != null && 
+                                  course.getTitle().toLowerCase().contains(searchKeyword))
+                .collect(Collectors.toList());
+    }
+
+    public List<Course> filterByLevel(String level) {
+        // Handle null level by defaulting to an empty string
+        final String targetLevel = (level == null) ? "" : level.toLowerCase().trim();
+
+        return courseRepository.findAll().stream()
+                .filter(course -> course.getLevel() != null && 
+                                  course.getLevel().toLowerCase().contains(targetLevel))
+                .collect(Collectors.toList());
     }
 
     private void validateCourse(Course course) {
