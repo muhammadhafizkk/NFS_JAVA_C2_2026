@@ -5,17 +5,17 @@ public class Course {
     private String title;
     private int durationHours;
     private String level;
-    private String category;
-    private boolean active;
+    //private String category;
+    //private boolean active;
     private Instructor instructor;
     
-    public Course(String courseId, String title, int durationHours, String level, String category, boolean active) {
+    public Course(String courseId, String title, int durationHours, String level) {
         setCourseId(courseId);
         setTitle(title);
         setDurationHours(durationHours);
         setLevel(level);
-        setCategory(category);
-        setActive(active);
+    //    setCategory(category);
+    //    setActive(active);
     }
 
     // Getters
@@ -35,13 +35,13 @@ public class Course {
         return level;
     }
 
-    public String getCategory() {
-        return category;
-    }
+    // public String getCategory() {
+    //     return category;
+    // }
 
-    public boolean isActive() {
-        return active;
-    }
+    // public boolean isActive() {
+    //     return active;
+    // }
 
     public Instructor getInstructor() {
         return instructor;
@@ -67,13 +67,13 @@ public class Course {
         this.level = requireText(level, "Course Level");
     }
 
-    public void setCategory(String category) {
-        this.category = requireText(category, "Category");
-    }
+    // public void setCategory(String category) {
+    //     this.category = requireText(category, "Category");
+    // }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
+    // public void setActive(boolean active) {
+    //     this.active = active;
+    // }
 
     public void setInstructor(Instructor instructor) {
         this.instructor = instructor;
@@ -85,8 +85,8 @@ public class Course {
         System.out.println("Title: " + title);
         System.out.println("Duration: " + durationHours + " hours");
         System.out.println("Level: " + level);
-        System.out.println("Category: " + category);
-        System.out.println("Status: " + (active ? "Active" : "Inactive"));
+    //    System.out.println("Category: " + category);
+    //    System.out.println("Status: " + (active ? "Active" : "Inactive"));
         
         if (instructor == null) {
             System.out.println("Instructor: Not assigned yet");

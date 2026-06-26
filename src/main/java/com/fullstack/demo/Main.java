@@ -13,9 +13,9 @@ public class Main {
         // Task 1 - Create course list
         // ==========================================
         ArrayList<Course> courses = new ArrayList<>();
-        courses.add(new Course("CS001", "Introduction to Computer Science", 40, "Beginner", "Fullstack Programming", true));
-        courses.add(new Course("CS002", "React Frontend Development", 21, "Intermediate", "Frontend Development", true));
-        courses.add(new Course("CS003", "MongoDB Basics", 14, "Beginner", "Database Management", false));
+        courses.add(new Course("CS001", "Introduction to Computer Science", 40, "Beginner"));
+        courses.add(new Course("CS002", "React Frontend Development", 21, "Intermediate"));
+        courses.add(new Course("CS003", "MongoDB Basics", 14, "Beginner"));
 
         // ==========================================
         // Task 2 - Create instructor list

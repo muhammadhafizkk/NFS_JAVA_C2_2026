@@ -1,3 +1,4 @@
+package src.main.java.com.fullstack.demo.model;
 public class CourseOffering {
     private String offeringId;
     private String offeringName;
