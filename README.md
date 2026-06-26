@@ -40,7 +40,10 @@ By separating Course and CourseOffering, the application follows a more realisti
 Day 3 - Exercise 1
 It goes through CourseService, then Course Repository, then InMemoryCourseRepository
 
-day 3 - Exercise 2
+Day 3 - Exercise 2
 InMemoryCourseRepository is a temporary storage because if we end the execution of the code or restart it, we lost all the data stored.The data only exists while the Java application is running.
 
 A repository implementation that communicates with MongoDB would replace it.
+
+Day 3 - Exercise 3
+Throwing CourseNotFoundException is better than printing the error message inside CourseService because the service layer should only handle business logic, not decide how errors are displayed. Different applications may want to handle the same error in different ways. For example, a console application might print a message to the terminal, a web API might return an HTTP 404 response, and a frontend application might show a popup or notification. By throwing an exception, the service layer allows each application to handle and display the error in the most appropriate way.
