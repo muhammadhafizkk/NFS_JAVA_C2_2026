@@ -50,3 +50,8 @@ Throwing CourseNotFoundException is better than printing the error message insid
 
 Day 3 - Exercise 4
 CourseOffering is a better design because a single course can be offered multiple times with different schedules, capacities, and delivery modes. If fields such as start date, end date, and capacity were stored directly in Course, each course could only have one schedule and one capacity. By creating a separate CourseOffering class, we can reuse the same Course object for multiple intakes while storing offering-specific information separately. This follows good object-oriented design principles by separating the course template from individual course offerings.
+
+Day 3 - Exercise 5
+The loop version is easier to understand because it shows each step explicitly. We can clearly see how the program iterates through the list, checks the condition, and adds matching courses to the result list. While streams are more concise, loops are often easier for beginners to read and debug.
+
+The filter() method is used to select elements that match a specified condition. It evaluates each element in the stream and keeps only those for which the condition returns true, while excluding the others.
