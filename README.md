@@ -36,3 +36,11 @@ Exercise 3
 CourseOffering is more useful than using only Course because a single course can be offered multiple times with different schedules, instructors, capacities, and delivery modes. For example, the course "Java Fundamentals" may have a June 2026 intake taught by one instructor and an August 2026 intake taught by another instructor.
 
 By separating Course and CourseOffering, the application follows a more realistic data model. The Course class stores general information about the course itself, while the CourseOffering class stores information specific to a particular intake or session. This approach reduces data duplication and makes it easier to manage enrollments, schedules, instructors, and course availability.
+
+Day 3 - Exercise 1
+It goes through CourseService, then Course Repository, then InMemoryCourseRepository
+
+day 3 - Exercise 2
+InMemoryCourseRepository is a temporary storage because if we end the execution of the code or restart it, we lost all the data stored.The data only exists while the Java application is running.
+
+A repository implementation that communicates with MongoDB would replace it.
