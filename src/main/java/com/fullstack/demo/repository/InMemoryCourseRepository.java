@@ -9,7 +9,7 @@ import java.util.Optional;
 import src.main.java.com.fullstack.demo.model.Course;
 
 public class InMemoryCourseRepository implements CourseRepository {
-    // Implementation details would go here
+    
     private final Map<String, Course> courses = new LinkedHashMap<>();
 
     @Override

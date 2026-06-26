@@ -1,5 +1,6 @@
 package src.main.java.com.fullstack.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 //import java.util.Optional;
 import java.util.stream.Collectors;
@@ -38,12 +39,38 @@ public class CourseService {
     }
 
     public List<Course> searchByTitle(String keyword) {
-        final String searchKeyword = (keyword == null) ? "" : keyword.toLowerCase().trim();
+        final String safeKeyword = (keyword == null) ? "" : keyword.toLowerCase();
 
-        return courseRepository.findAll().stream()
-                .filter(course -> course.getTitle() != null && 
-                                  course.getTitle().toLowerCase().contains(searchKeyword))
-                .collect(Collectors.toList());
+        return courseRepository.findAll() //gets all courses
+                .stream()                 //starts processing the list of courses
+                .filter(course -> course.getTitle().toLowerCase().contains(safeKeyword)) //keeps only matching results
+                .toList();                //collects the results into a new list
+    }
+
+    public List<Course> searchByTitleUsingLoop(String keyword) {
+        final String safeKeyword = (keyword == null) ? "" : keyword.trim().toLowerCase();
+        List<Course> results = new ArrayList<>();
+
+        for (Course course : courseRepository.findAll()) {
+            if (course.getTitle().toLowerCase().contains(safeKeyword)) {
+                results.add(course);
+            }
+        }
+
+        return results;
+    }
+
+    public List<Course> searchByLevelUsingLoop(String level) {
+        final String safeLevel = (level == null) ? "" : level.trim().toLowerCase();
+        List<Course> results = new ArrayList<>();
+
+        for (Course course : courseRepository.findAll()) {
+            if (course.getLevel().toLowerCase().contains(safeLevel)) {
+                results.add(course);
+            }
+        }
+
+        return results;
     }
 
     public List<Course> filterByLevel(String level) {

@@ -55,3 +55,8 @@ Day 3 - Exercise 5
 The loop version is easier to understand because it shows each step explicitly. We can clearly see how the program iterates through the list, checks the condition, and adds matching courses to the result list. While streams are more concise, loops are often easier for beginners to read and debug.
 
 The filter() method is used to select elements that match a specified condition. It evaluates each element in the stream and keeps only those for which the condition returns true, while excluding the others.
+
+Day 3 - Exercise 6
+StudentService is similar to CourseService as it does business logic on student objects instead of courses
+
+InMemoryStudentRepository stores students temporarily
