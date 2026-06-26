@@ -47,3 +47,6 @@ A repository implementation that communicates with MongoDB would replace it.
 
 Day 3 - Exercise 3
 Throwing CourseNotFoundException is better than printing the error message inside CourseService because the service layer should only handle business logic, not decide how errors are displayed. Different applications may want to handle the same error in different ways. For example, a console application might print a message to the terminal, a web API might return an HTTP 404 response, and a frontend application might show a popup or notification. By throwing an exception, the service layer allows each application to handle and display the error in the most appropriate way.
+
+Day 3 - Exercise 4
+CourseOffering is a better design because a single course can be offered multiple times with different schedules, capacities, and delivery modes. If fields such as start date, end date, and capacity were stored directly in Course, each course could only have one schedule and one capacity. By creating a separate CourseOffering class, we can reuse the same Course object for multiple intakes while storing offering-specific information separately. This follows good object-oriented design principles by separating the course template from individual course offerings.
