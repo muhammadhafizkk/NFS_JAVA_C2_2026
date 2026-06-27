@@ -1,0 +1,20 @@
+[
+  {
+    "courseId": "C001",
+    "title": "JavaScript Fundamentals",
+    "durationHours": 12,
+    "level": "Beginner"
+  },
+  {
+    "courseId": "C002",
+    "title": "React Frontend Development",
+    "durationHours": 16,
+    "level": "Intermediate"
+  },
+  {
+    "courseId": "C003",
+    "title": "MongoDB Basics",
+    "durationHours": 8,
+    "level": "Advanced"
+  }
+]
