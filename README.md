@@ -60,3 +60,39 @@ Day 3 - Exercise 6
 StudentService is similar to CourseService as it does business logic on student objects instead of courses
 
 InMemoryStudentRepository stores students temporarily
+
+Day 4 - Exercise 1
+Java objects are created from a class definition.
+JavaScript objects can be created directly using an object literal without defining a class.
+
+Day 4 - Exercise 2
+A JavaScript array is similar to a Java ArrayList because both can store a collection of items and can grow or shrink dynamically
+
+Day 4 - Exercise 3
+Because React uses arrow functions very frequently.
+
+Day 4 - Exercise 4
+filter() → returns an array of multiple items that match a condition
+Example: all active students
+find() → returns only the first matching item
+Example: first student with ID "S002"
+map() → returns a new array with transformed data
+Example: extract only emails from students
+
+The four methods that modify the original array are:
+push(), pop(), shift(), unshift()
+
+push() returns the new length of the array after adding the item.
+
+pop() returns the removed last element from the array.
+
+shift() → removes the first element of the array
+→ returns the removed element
+unshift() → adds an element to the beginning of the array
+→ returns the new length of the array
+
+Day 4 - Exercise 5
+To allow altering the page's behavior
+
+Day 4 - Exercise 6
+filter() is commonly used in a search feature to create a new array containing only the items that match the user's search keyword.
